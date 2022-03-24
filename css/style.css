@@ -89,14 +89,19 @@ select {
 body {
     display: flex;
     flex-direction: column;
-    background-color: #f8f8f8;
+    background-image: url(../img/dave-robinson-B2KgTWnNBd4-unsplash.jpg);
     color: #121212;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main{
+    background-color: rgba(248, 248, 248, 0.8);
 }
 /* För att göra footern sticky så har vi flex på bodyn och då räcker det med 
  * margin-top auto här.
  */
 footer {
+    background-color: grey;
     margin-top: auto;
     padding-top: 2rem;
     padding-bottom: 3rem;

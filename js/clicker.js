@@ -107,12 +107,17 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
     {
-        name: 'Fin sop',
+        name: 'Styrka',
+        cost: 5,
+        amount: 0,
+    },
+    {
+        name: 'Yxa',
         cost: 10,
         amount: 1,
     },
     {
-        name: 'Spade',
+        name: 'Motorsåg',
         cost: 100,
         amount: 10,
     },
@@ -148,7 +153,7 @@ function createCard(upgrade) {
     header.classList.add('title');
     const cost = document.createElement('p');
 
-    header.textContent = `${upgrade.name}, +${upgrade.amount} per sekund.`;
+    header.textContent = `${upgrade.name}, +${upgrade.amount} Effektivitet per sekund, +${moneyPerClick} Styrka per klick.`;
     cost.textContent = `Köp för ${upgrade.cost} benbitar.`;
 
     card.addEventListener('click', (e) => {
@@ -158,7 +163,7 @@ function createCard(upgrade) {
             upgrade.cost *= 1.5;
             cost.textContent = 'Köp för ' + upgrade.cost + ' benbitar';
             moneyPerSecond += upgrade.amount;
-            message('Grattis du har lockat till dig fler besökare!', 'success');
+            message('Grattis du har blivit bättre!', 'success');
         } else {
             message('Du har inte råd.', 'warning');
         }
