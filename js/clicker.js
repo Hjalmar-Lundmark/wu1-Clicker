@@ -26,6 +26,7 @@ let moneyPerClick = 1;
 let moneyPerSecond = 0;
 let last = 0;
 
+
 let achievementTest = false;
 
 /* Med ett valt element, som knappen i detta fall så kan vi skapa listeners
@@ -110,21 +111,25 @@ upgrades = [
         name: 'Styrka',
         cost: 5,
         amount: 0,
+        timesBought: 0,
     },
     {
         name: 'Yxa',
         cost: 10,
         amount: 1,
+        timesBought: 0,
     },
     {
         name: 'Motorsåg',
         cost: 100,
         amount: 10,
+        timesBought: 0,
     },
     {
         name: 'Hjälpreda',
         cost: 1000,
         amount: 100,
+        timesBought: 0,
     },
 ];
 
@@ -152,16 +157,24 @@ function createCard(upgrade) {
     const header = document.createElement('p');
     header.classList.add('title');
     const cost = document.createElement('p');
+    const bought = document.createElement('p');
+    bought.classList.add('bought')
+
 
     header.textContent = `${upgrade.name}, +${upgrade.amount} Effektivitet per sekund, +${moneyPerClick} Styrka per klick.`;
-    cost.textContent = `Köp för ${upgrade.cost} benbitar.`;
+    cost.textContent = `Köp för ${upgrade.cost} trä.`;
+    bought.textContent = `Köpt: ${upgrade.timesBought} gånger.`;
+    
 
     card.addEventListener('click', (e) => {
         if (money >= upgrade.cost) {
             moneyPerClick++;
             money -= upgrade.cost;
             upgrade.cost *= 1.5;
-            cost.textContent = 'Köp för ' + upgrade.cost + ' benbitar';
+            upgrade.cost = Math.round(upgrade.cost);
+            cost.textContent = 'Köp för ' + upgrade.cost + ' trä';
+            upgrade.timesBought++;
+            bought.textContent = 'Köpt: ' + upgrade.timesBought + ' gånger.'
             moneyPerSecond += upgrade.amount;
             message('Grattis du har blivit bättre!', 'success');
         } else {
@@ -170,6 +183,7 @@ function createCard(upgrade) {
     });
 
     card.appendChild(header);
+    card.appendChild(bought);
     card.appendChild(cost);
     return card;
 }
