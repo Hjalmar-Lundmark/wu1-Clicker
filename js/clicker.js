@@ -72,9 +72,9 @@ function step(timestamp) {
     // achievements. Titta dock på upgrades arrayen och gör något rimligare om du
     // vill ha achievements.
     // på samma sätt kan du även dölja uppgraderingar som inte kan köpas
-    if (moneyPerClick == 10 && !achievementTest) {
+    if (money == 69 && !achievementTest) {
         achievementTest = true;
-        message('Du har hittat en FOSSIL!', 'achievement');
+        message('Nice👍🤣🤣😂😎👌⭐✔', 'achievement');
     }
 
     window.requestAnimationFrame(step);
@@ -108,13 +108,13 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
     {
-        name: 'Styrka',
+        name: 'Styrka💪',
         cost: 5,
         amount: 0,
         timesBought: 0,
     },
     {
-        name: 'Yxa',
+        name: 'Yxa🪓',
         cost: 10,
         amount: 1,
         timesBought: 0,
@@ -126,7 +126,7 @@ upgrades = [
         timesBought: 0,
     },
     {
-        name: 'Hjälpreda',
+        name: 'Hjälpreda🤝',
         cost: 1000,
         amount: 100,
         timesBought: 0,
@@ -154,14 +154,19 @@ upgrades = [
 function createCard(upgrade) {
     const card = document.createElement('div');
     card.classList.add('card');
-    const header = document.createElement('p');
+    const uppgradeInfo = document.createElement('div');
+    uppgradeInfo.classList.add('info');
+    const header = document.createElement('h3');
     header.classList.add('title');
+    const information = document.createElement('p');
+    information.classList.add('cardInfo');
     const cost = document.createElement('p');
     const bought = document.createElement('p');
     bought.classList.add('bought')
 
 
-    header.textContent = `${upgrade.name}, +${upgrade.amount} Effektivitet per sekund, +${moneyPerClick} Styrka per klick.`;
+    header.textContent = `${upgrade.name}`;
+    information.textContent = `+${upgrade.amount} Effektivitet per sekund, +${moneyPerClick} Styrka per klick.`;
     cost.textContent = `Köp för ${upgrade.cost} trä.`;
     bought.textContent = `Köpt: ${upgrade.timesBought} gånger.`;
     
@@ -182,8 +187,10 @@ function createCard(upgrade) {
         }
     });
 
-    card.appendChild(header);
-    card.appendChild(bought);
+    card.appendChild(uppgradeInfo);
+    uppgradeInfo.appendChild(header);
+    uppgradeInfo.appendChild(information);
+    uppgradeInfo.appendChild(bought);
     card.appendChild(cost);
     return card;
 }

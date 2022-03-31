@@ -217,6 +217,7 @@ footer {
 .card {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     cursor: pointer;
     border: 1px solid #646464;
     margin: 0.5rem 0;
@@ -230,9 +231,13 @@ footer {
  * font vikt är oftast 400
  */
 .title {
-    font-weight: 600;
+    font-weight: 800;
 }
 
 .bought {
-    font-weight: 500;
+    font-weight: 400;
+}
+
+.cardInfo {
+    font-weight: 600;
 }
