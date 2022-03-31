@@ -74,7 +74,11 @@ function step(timestamp) {
     // på samma sätt kan du även dölja uppgraderingar som inte kan köpas
     if (money == 69 && !achievementTest) {
         achievementTest = true;
-        message('Nice👍🤣🤣😂😎👌⭐✔', 'achievement');
+        message('Achievement unlocked; Nice👍🤣🤣😂😎👌⭐✔', 'achievement');
+    }
+    if (money == 100000 && moneyPerClick == 1 && achievementTest == true) {
+        achievementTest = false;
+        message('Achievement unlocked; You mad man, you actually did it', 'achievement');
     }
 
     window.requestAnimationFrame(step);
@@ -167,9 +171,9 @@ function createCard(upgrade) {
 
     header.textContent = `${upgrade.name}`;
     information.textContent = `+${upgrade.amount} Effektivitet per sekund, +${moneyPerClick} Styrka per klick.`;
-    cost.textContent = `Köp för ${upgrade.cost} trä.`;
     bought.textContent = `Köpt: ${upgrade.timesBought} gånger.`;
-    
+    cost.textContent = `Köp för ${upgrade.cost} trä.`;
+
 
     card.addEventListener('click', (e) => {
         if (money >= upgrade.cost) {
