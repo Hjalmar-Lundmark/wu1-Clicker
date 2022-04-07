@@ -91,7 +91,7 @@ body {
     flex-direction: column;
     background-image: url(../img/dave-robinson-B2KgTWnNBd4-unsplash.jpg);
     color: #121212;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Courgette', cursive;
 }
 
 main{
@@ -138,9 +138,9 @@ footer {
  * knappen blir överst på sidan.
  */
 @media (max-width: 36rem) {
-   header {
+   /*header {
        display: none;
-   }
+   }*/
    .game-hud {
         flex-direction: column-reverse;
    }

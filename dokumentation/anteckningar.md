@@ -19,4 +19,4 @@ Kvar att göra:
 2. Font
 3. ???
 
-7/4: 
+7/4: Valde font(https://fonts.google.com/specimen/Courgette), ändrade layout lite i mobilversion, 
