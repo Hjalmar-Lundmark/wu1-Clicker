@@ -20,3 +20,4 @@ Kvar att göra:
 3. ???
 
 7/4: Valde font(https://fonts.google.com/specimen/Courgette), ändrade layout lite i mobilversion, 
+Helt godkänd validation av HTML och CSS. 

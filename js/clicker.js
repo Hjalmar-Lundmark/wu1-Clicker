@@ -185,9 +185,9 @@ function createCard(upgrade) {
             upgrade.timesBought++;
             bought.textContent = 'Köpt: ' + upgrade.timesBought + ' gånger.'
             moneyPerSecond += upgrade.amount;
-            message('Grattis du har blivit bättre!', 'success');
+            message('✅Grattis du har blivit bättre!✅', 'success');
         } else {
-            message('Du har inte råd.', 'warning');
+            message('⛔Du har inte råd.⛔', 'warning');
         }
     });
 
